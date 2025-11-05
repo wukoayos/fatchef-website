@@ -1,0 +1,232 @@
+.menu-root {
+  --bg-paper-1:#f7efe5;
+  --bg-paper-2:#efe6da;
+  --ink:#4b5563;          /* 中性灰 */
+  --text:#171717;
+  --text-2:#505050;
+  --rule:#9ca3af;
+  --panel:#ffffffb3;      /* 70% 透明白 */
+  --border:#d1d5db;
+
+  position:relative;
+  min-height:100vh;
+  color:var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+/* 纸张底纹（两组径向+纯色） */
+.menu-root .paper-bg{
+  position:absolute; inset:0; z-index:-1;
+  background:
+    radial-gradient(1000px 600px at -10% 10%, var(--bg-paper-2) 20%, rgba(0,0,0,0) 60%),
+    radial-gradient(800px 500px at 110% 90%, var(--bg-paper-2) 20%, rgba(0,0,0,0) 60%),
+    linear-gradient(0deg, var(--bg-paper-1), var(--bg-paper-1));
+}
+
+/* 墨点装饰 */
+.menu-root .ink{ position:absolute; width:16rem; color:var(--ink); }
+.menu-root .ink--tl{ left:-60px; top:-40px; opacity:.4; }
+.menu-root .ink--br{ right:-40px; bottom:-50px; opacity:.35; }
+
+.menu-root .container{ max-width: 1120px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+
+.menu-root .menu-page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text); /* Use existing text color variable */
+}
+
+.menu-root .grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px){
+  .menu-root .grid{ grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+
+/* 右侧一列的纵向间距 */
+.menu-root .col-right > * + *{ margin-top: 2rem; }
+
+/* 区块面板 */
+.menu-root .panel{ padding: 0; }
+.menu-root .panel--boxed{
+  padding: 1.25rem;
+  background: var(--panel);
+  border:1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.04);
+}
+.menu-root .panel--inverse{
+  padding: 1.25rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  color: #fff;
+}
+
+/* 标题区 */
+.menu-root .section__head{
+  display:flex; align-items:flex-end; gap:.75rem;
+}
+.menu-root .section__title{
+  font-family: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 700;
+  letter-spacing: .12em;
+  font-size: 1.5rem;
+}
+.menu-root .section__subtitle{
+  color:#6b7280;
+  letter-spacing: .2em;
+  font-size:.85rem;
+}
+
+/* 分割线 */
+.menu-root .rule{
+  height:1px; width:100%;
+  background: var(--rule);
+  opacity:.6;
+  margin: .75rem 0 1rem;
+}
+
+/* 菜品行 */
+.menu-root .item{ padding: .6rem 0; }
+.menu-root .item__row{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;
+}
+.menu-root .item__name{ font-weight: 600; letter-spacing:.02em; }
+.menu-root .item__flags{ color:#6b7280; font-weight:500; }
+.menu-root .item__price{ font-weight: 700; font-variant-numeric: tabular-nums; white-space:nowrap; }
+.menu-root .item__desc{ margin:.35rem 0 0; color:var(--text-2); line-height:1.6; font-size:.96rem; }
+
+/* ADD ON */
+.menu-root .add-on{ margin-top:1rem; }
+.menu-root .add-on__title{ letter-spacing:.12em; font-weight:700; }
+.menu-root .add-on ul{ margin:.4rem 0 0; padding-left: 1rem; }
+.menu-root .add-on li{ margin:.25rem 0; font-size:.95rem; line-height:1.5; }
+
+/* 简单的可打印优化 */
+@media print{
+  .menu-root .ink{ display:none; }
+  .menu-root .paper-bg{ background:white; }
+  .menu-root .container{ padding: 0; }
+  .menu-root .grid{ gap: 1.2rem; }
+}
+
+/* ===== Drinks block ===== */
+
+.dr-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: .5rem;
+}
+@media (min-width: 992px){
+  .dr-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+.dr-col > * + *{ margin-top: 1.2rem; }
+.mt24{ margin-top: 1.5rem; }
+
+/* 副标题块（如 RED/WHITE/GIN 等） */
+.dr-subhead{
+  display:inline-block;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin: .4rem 0 .3rem;
+  padding: .15rem .5rem;
+  border-radius: 6px;
+  background: #efe4d5;
+  border: 1px solid #d9cdbd;
+  color: #222;
+  font-size: .9rem;
+}
+
+/* Wine 表格 */
+.wine-block{ margin-top: .4rem; }
+.wine-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .98rem;
+  table-layout: fixed;
+}
+.wine-table thead th{
+  text-align: left;
+  font-weight: 700;
+  color: #6b7280;
+  padding: .2rem .25rem .4rem 0;
+}
+.wine-table td, .wine-table th{
+  padding: .38rem .25rem .38rem 0;
+}
+.wine-table .w-g, .wine-table .w-b{
+  width: 4.5rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Shots 列表（带价格） */
+.shot-item + .shot-item{ margin-top: .65rem; }
+.shot-row{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem;
+}
+.shot-name{ font-weight: 700; letter-spacing:.02em; }
+.shot-price{ font-weight: 700; font-variant-numeric: tabular-nums; }
+.shot-desc{ color:#555; margin-top: .15rem; font-size:.95rem; }
+
+/* ===== Cocktails block ===== */
+
+.ck-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  margin-top: .25rem;
+}
+@media (min-width: 900px){
+  .ck-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+.ck-col > * + *{ margin-top: 1rem; }
+
+.ck-item{
+  padding: .8rem 0 .5rem;
+  border-bottom: 1px dashed #d6d6d6;
+}
+.ck-name{
+  font-weight: 700;
+  letter-spacing: .02em;
+  display:flex; align-items:baseline; gap:.4rem;
+}
+.ck-index{
+  width: 1.6rem;
+  text-align:right;
+  font-variant-numeric: tabular-nums;
+  color:#6b7280;
+}
+.ck-desc{
+  margin:.35rem 0 0;
+  color:#505050;
+  line-height:1.55;
+  font-size:.96rem;
+}
+
+/* Cocktails 价格脚注（点线对齐） */
+.ck-price{
+  display:flex; flex-wrap:wrap; gap:1.2rem 2.5rem;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+}
+.ck-price .dots{
+  display:inline-block;
+  width: 140px; max-width: 24vw;
+  border-bottom: 1px dotted #bdbdbd;
+  margin: 0 .6rem .2rem;
+  transform: translateY(-2px);
+}
+
+/* divider 已沿用你页面的 .divider /.divider__label 样式 */

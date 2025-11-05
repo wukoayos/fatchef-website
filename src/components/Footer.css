@@ -1,0 +1,16 @@
+.footer-custom {
+  background-color: var(--dark-gray);
+  color: var(--off-white-bg);
+  padding: 20px 0;
+}
+
+.footer-logo {
+  height: 50px; /* Adjust as needed */
+  margin-bottom: 10px;
+}
+
+.copyright-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+}

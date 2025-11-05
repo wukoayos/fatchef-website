@@ -1,0 +1,35 @@
+.social-links-container {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Makes it circular */
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Per-icon colors */
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.social-icon.tiktok {
+  background-color: #000000; /* TikTok brand color */
+}

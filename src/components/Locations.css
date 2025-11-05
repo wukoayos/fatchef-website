@@ -1,0 +1,107 @@
+.location-block {
+  display: grid;
+  grid-template-columns: 5fr 3fr; /* Golden Ratio split */
+  align-items: center;
+  margin-bottom: 2rem; /* Space between location blocks */
+  background-color: white; /* Card background */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem; /* Internal padding for the card content */
+}
+
+@media (max-width: 768px) {
+  .location-block {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    padding: 1.5rem; /* Adjust padding for mobile */
+  }
+
+  .location-details {
+    padding-left: 0; /* Remove left padding when stacked */
+    padding-top: 1.5rem; /* Add top padding for spacing */
+  }
+}
+
+.location-block:last-child {
+  margin-bottom: 0;
+}
+
+.map-placeholder {
+  /* background-color: #e9ecef; -- Removed, card background handles this */
+  border-radius: 8px; /* Inner radius for the map */
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #6c757d;
+  /* border: 3px dashed #ced4da; -- Removed, card shadow handles this */
+  overflow: hidden; /* Ensure map iframe respects border-radius */
+}
+
+.map-placeholder iframe {
+  border-radius: 8px; /* Apply radius to iframe as well */
+}
+
+.map-placeholder-text h5 {
+  font-weight: bold;
+}
+
+.location-details {
+  padding-left: 2rem; /* Adjust padding for card layout */
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  color: #000000e1;
+}
+
+.location-name {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  margin: 0; /* Remove margin to prevent interference with flexbox centering */
+}
+
+.location-name-bar {
+  background-color: #8B7355; /* Coffee gray background */
+  color: white; /* White text */
+  padding: 0.8rem 1rem; /* Adjusted padding */
+  text-align: center; /* Center the text */
+  margin-bottom: 1rem; /* Maintain spacing */
+  border-radius: 8px; /* Slightly rounded corners */
+  display: flex;
+  align-items: center;     /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  font-size: 1.25rem; /* Adjusted font size */
+  letter-spacing: 0.5px;   /* Adjusted letter spacing */
+}
+
+.location-address,
+.location-phone {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+  white-space: pre-line;
+}
+
+.trading-hours-text {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  white-space: pre-line;
+}
+
+.get-directions-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: var(--dark-gray);
+  border-color: var(--dark-gray);
+  width: 100%;
+  display: block;
+}
+
+.get-directions-btn:hover {
+  background-color: var(--roast-brown);
+  border-color: var(--roast-brown);
+}

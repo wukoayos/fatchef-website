@@ -1,0 +1,58 @@
+.hero-section {
+  position: relative;
+  height: 90vh; /* Adjusted for better feel */
+  color: white;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(42, 42, 42, 0.5); /* Using the #2A2A2A dark gray with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed from center */
+  padding-top: 35vh; /* Position content down from the top */
+}
+
+.hero-title {
+  /* Using a generic bold serif font for now. We'll set a specific one globally later. */
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 5rem; /* Huge, 醒目 title */
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-button {
+  /* White button with black border, as per description */
+  background-color: white;
+  color: #2A2A2A; /* Dark gray from palette */
+  border: 2px solid #2A2A2A;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px; /* Rounded rectangle */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 20px;
+}
+
+.hero-button:hover {
+  /* Hover effect: color inversion */
+  background-color: #2A2A2A;
+  color: white;
+}
