@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto&display=swap');
+
+:root {
+  --dark-gray: #2A2A2A;
+  --warm-yellow: #E7C97F;
+  --roast-brown: #9B4B25;
+  --wood-color: #A67C52;
+  --off-white-bg: #F9F9F9;
+  --main-text: #333;
+  --secondary-text: #777;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  /* Using a subtle light wood texture as background */
+  background: url('https://www.transparenttextures.com/patterns/light-wood.png');
+  font-family: 'Roboto', sans-serif;
+  color: var(--main-text);
+  padding-top: 150px; /* Offset for fixed navbar */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5, h6 {
+  /* Using Lora for headings */
+  font-family: 'Lora', 'Georgia', serif;
+  font-weight: 700;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Making the main content area have a clean background to stand out from the texture */
+main {
+  background-color: white;
+}
+
+.navbar-custom {
+  background-color: var(--dark-gray);
+  min-height: 150px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.5rem;
+  color: var(--warm-yellow);
+  margin: 0 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
   color: white;
+  text-shadow: 0 0 5px var(--warm-yellow);
 }
 
-.App-link {
-  color: #61dafb;
+/* Hide the default dropdown arrow */
+.navbar-nav .dropdown-toggle::after {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* Remove the gap so it doesn't close unexpectedly */
+}
+
+/* Custom Dropdown Styling */
+.navbar-custom .dropdown-menu {
+  background-color: var(--dark-gray);
+  border: 1px solid var(--warm-yellow);
+  border-radius: 8px;
+}
+
+.navbar-custom .dropdown-item {
+  color: var(--warm-yellow);
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar-custom .dropdown-item:hover {
+  color: white;
+  background-color: var(--roast-brown);
 }
