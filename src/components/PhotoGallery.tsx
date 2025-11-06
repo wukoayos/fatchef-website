@@ -23,11 +23,24 @@ import g8 from '../assets/g8.jpg';
 import g9 from '../assets/g9.jpg';
 import g10 from '../assets/g10.jpg';
 
+const images = [
+  { src: g1, alt: "A delicious dish from FAT CHEF restaurant" },
+  { src: g2, alt: "A signature cocktail from FAT CHEF" },
+  { src: g3, alt: "The cozy interior of FAT CHEF restaurant" },
+  { src: g4, alt: "A close-up of a gourmet burger" },
+  { src: g5, alt: "A platter of assorted grilled meats" },
+  { src: g6, alt: "A fresh and vibrant salad" },
+  { src: g7, alt: "A dessert platter with various sweets" },
+  { src: g8, alt: "A shot of the restaurant's exterior" },
+  { src: g9, alt: "A group of friends enjoying a meal at FAT CHEF" },
+  { src: g10, alt: "A chef preparing a dish in the kitchen" }
+];
+
 // Distribute images into four groups for the four carousels
-const images_large = [g1, g5, g9];
-const images_small1 = [g2, g6, g10];
-const images_small2 = [g3, g7];
-const images_medium = [g4, g8];
+const images_large = [images[0], images[4], images[8]];
+const images_small1 = [images[1], images[5], images[9]];
+const images_small2 = [images[2], images[6]];
+const images_medium = [images[3], images[7]];
 
 const commonSwiperProps = {
   modules: [Autoplay, EffectFade], // Add EffectFade module
@@ -50,7 +63,7 @@ export default function PhotoGallery() {
             autoplay={{ delay: 7000, disableOnInteraction: false }} // Slower delay
           >
             {images_large.map((img, i) => (
-              <SwiperSlide key={i}><img src={img} alt="" /></SwiperSlide>
+              <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
             ))}
           </Swiper>
         </div>
@@ -65,7 +78,7 @@ export default function PhotoGallery() {
                 autoplay={{ delay: 8500, disableOnInteraction: false }} // Slower delay
               >
                 {images_small1.map((img, i) => (
-                  <SwiperSlide key={i}><img src={img} alt="" /></SwiperSlide>
+                  <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
                 ))}
               </Swiper>
             </div>
@@ -75,7 +88,7 @@ export default function PhotoGallery() {
                 autoplay={{ delay: 6500, disableOnInteraction: false }} // Slower delay
               >
                 {images_small2.map((img, i) => (
-                  <SwiperSlide key={i}><img src={img} alt="" /></SwiperSlide>
+                  <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
                 ))}
               </Swiper>
             </div>
@@ -88,7 +101,7 @@ export default function PhotoGallery() {
               autoplay={{ delay: 9000, disableOnInteraction: false }} // Slower delay
             >
               {images_medium.map((img, i) => (
-                <SwiperSlide key={i}><img src={img} alt="" /></SwiperSlide>
+                <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
               ))}
             </Swiper>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./KeilorEastMenu.css";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 /** ---------- Types ---------- */
 interface Item {
@@ -253,6 +254,7 @@ const MenuSection: React.FC<Section> = ({ title, subtitle, items, footnote, boxe
 
 /** ---------- 页面组件 ---------- */
 export default function KeilorEastMenu() {
+  useDocumentTitle("Keilor East Menu - FAT CHEF");
   return (
     <div className="menu-root">
       {/* 背景与墨点 */}

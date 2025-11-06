@@ -1,5 +1,6 @@
 import React from "react";
 import "./BallaratMenu.css";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 /* ---------- Types ---------- */
 interface Item {
@@ -331,6 +332,7 @@ const SectionBlock: React.FC<Section> = ({
 
 /* ---------- Page ---------- */
 export default function BallaratMenu() {
+  useDocumentTitle("Ballarat Menu - FAT CHEF");
   return (
     <div className="ballarat-root">
       {/* 背景与墨点 */}

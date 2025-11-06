@@ -1,7 +1,9 @@
 import React from "react";
 import "./BallaratPromotion.css";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function BallaratPromotion() {
+  useDocumentTitle("Ballarat Promotions - FAT CHEF");
   return (
     <div className="promo-root">
       <div className="paper-bg" />

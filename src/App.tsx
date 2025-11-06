@@ -11,8 +11,24 @@ import KeilorEastMenu from './components/KeilorEastMenu'; // Import the new comp
 import BallaratMenu from './components/BallaratMenu'; // Import the new component
 import KeilorEastPromotion from './components/KeilorEastPromotion'; // Import the new component
 import BallaratPromotion from './components/BallaratPromotion'; // Import the new component
+import useDocumentTitle from './hooks/useDocumentTitle';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import routing components
 import { HashLink } from 'react-router-hash-link'; // Import HashLink
+
+const HomePage = () => {
+  useDocumentTitle("FAT CHEF - Never Trust A Skinny Chef");
+  return (
+    <>
+      <HeroSection />
+      <BookATable />
+      <main>
+        <PhotoGallery />
+        {/* <MenuSection /> */}
+        <Locations />
+      </main>
+    </>
+  );
+};
 
 function App() {
   return (
@@ -21,7 +37,7 @@ function App() {
         <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
           <div className="container">
             <Link className="navbar-brand" to="/"> {/* Use Link for home */}
-              <img src={logo} alt="Restaurant Logo" style={{ height: '120px' }} />
+              <img src={logo} alt="FAT CHEF Restaurant Logo" style={{ height: '120px' }} />
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -69,8 +85,8 @@ function App() {
                     Order Online
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarOrderDropdown">
-                    <li><a className="dropdown-item" href="https://www.google.com/viewer/chooseprovider?mid=/g/11fx9m7zdm&g2lbs=AO8LyOKHLWt_bmFkUElZpXha2n_R3BAtT1jIT8cIj2B_Oro_2zhzNNtm35Oqbo1hffZNsuTgJAgsdn7aTexui2ES30B-v0tAGAld8Z9ooh6m8OkSi9im248%3D&hl=zh-Hans-AU&gl=au&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=050GacPrBuGVseMPzZmgqAo&ei=050GacPrBuGVseMPzZmgqAo&fo_s=OA&opi=79508299&ebb=1&cs=0&foub=mcpp" target="_blank" rel="noopener noreferrer">FAT CHEF Keilor East</a></li>
-                    <li><a className="dropdown-item" href="https://www.google.com/viewer/chooseprovider?mid=/g/11nn1xdjtk&g2lbs=AO8LyOKhFVBB-e2lqOm3GPh5lSYB1lHVNoz6IjHEO_3_c8FS31v54Y50TC5c2B0DC_Lvru1wWM4NSneP9EVbejOWh-jbQocPVD_nYGbrjdi5r_bD4Z2YtHg%3D&hl=zh-Hans-AU&gl=au&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=LeoGaZekDI2gseMP89G2yAQ&ei=LeoGaZekDI2gseMP89G2yAQ&fo_s=OA&opi=79508299&ebb=1&cs=0&foub=mcpp" target="_blank" rel="noopener noreferrer">FAT CHEF Ballarat</a></li>
+                    <li><a className="dropdown-item" href="https://www.ubereats.com/au/store/fat-chef-keilor-east/MGw4_kTaTZS6eC5ikFF9Ew?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjE1NiUyMFVuaW9uJTIwUm9hZCUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMmU4Y2ZkODc3LTYyOWYtNTY4Yy02ZWViLTlmNGEzNTMyZmRhMyUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJ1YmVyX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBLTM3Ljc3NDk5OSUyQyUyMmxvbmdpdHVkZSUyMiUzQTE0NC45MTU4NTYlN0Q%3D&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">FAT CHEF Keilor East</a></li>
+                    <li><a className="dropdown-item" href="https://www.ubereats.com/au/store/fatchef-ballarat/L0hw1TmYTH-YswXYcJ5V8Q?utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">FAT CHEF Ballarat</a></li>
                   </ul>
                 </li>
               </ul>
@@ -79,17 +95,7 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={
-            <>
-              <HeroSection />
-              <BookATable />
-              <main>
-                <PhotoGallery />
-                {/* <MenuSection /> */}
-                <Locations />
-              </main>
-            </>
-          } />
+          <Route path="/" element={<HomePage />} />
           <Route path="/menu/keilor-east" element={<KeilorEastMenu />} />
           <Route path="/menu/ballarat" element={<BallaratMenu />} />
           <Route path="/promotion/keilor-east" element={<KeilorEastPromotion />} />

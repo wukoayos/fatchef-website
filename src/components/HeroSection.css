@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  height: 90vh; /* Adjusted for better feel */
+  height: 60vh;
   color: white;
   overflow: hidden;
 }
@@ -24,8 +24,7 @@
   background: rgba(42, 42, 42, 0.5); /* Using the #2A2A2A dark gray with transparency */
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Changed from center */
-  padding-top: 35vh; /* Position content down from the top */
+  align-items: center; /* Changed from flex-start to center */
 }
 
 .hero-title {
