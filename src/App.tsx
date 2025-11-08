@@ -45,7 +45,7 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a className="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Book Now
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -54,7 +54,7 @@ function App() {
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarLocationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a className="nav-link dropdown-toggle" href="#!" id="navbarLocationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Location
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarLocationDropdown">
@@ -63,7 +63,7 @@ function App() {
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a className="nav-link dropdown-toggle" href="#!" id="navbarMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Menu
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarMenuDropdown">
@@ -72,7 +72,7 @@ function App() {
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarPromotionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a className="nav-link dropdown-toggle" href="#!" id="navbarPromotionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Promotion
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarPromotionDropdown">
@@ -81,7 +81,7 @@ function App() {
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarOrderDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a className="nav-link dropdown-toggle" href="#!" id="navbarOrderDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Order Online
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarOrderDropdown">
