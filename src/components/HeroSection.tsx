@@ -3,6 +3,8 @@ import './HeroSection.css';
 import './BookATable.css'; // Import styles for the button
 import heroVideo from '../assets/hero.mp4';
 
+import heroPoster from '../assets/hero-poster.jpg';
+
 function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false); // State for the dropdown
@@ -15,7 +17,7 @@ function HeroSection() {
 
   return (
     <header className="hero-section">
-      <video ref={videoRef} className="hero-video" autoPlay loop muted>
+      <video ref={videoRef} className="hero-video" autoPlay loop muted poster={heroPoster}>
         <source src={heroVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

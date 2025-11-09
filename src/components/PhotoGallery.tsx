@@ -63,7 +63,7 @@ export default function PhotoGallery() {
             autoplay={{ delay: 7000, disableOnInteraction: false }} // Slower delay
           >
             {images_large.map((img, i) => (
-              <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
+              <SwiperSlide key={i}><img src={img.src} alt={img.alt} loading="lazy" /></SwiperSlide>
             ))}
           </Swiper>
         </div>
@@ -78,7 +78,7 @@ export default function PhotoGallery() {
                 autoplay={{ delay: 8500, disableOnInteraction: false }} // Slower delay
               >
                 {images_small1.map((img, i) => (
-                  <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
+                  <SwiperSlide key={i}><img src={img.src} alt={img.alt} loading="lazy" /></SwiperSlide>
                 ))}
               </Swiper>
             </div>
@@ -88,24 +88,23 @@ export default function PhotoGallery() {
                 autoplay={{ delay: 6500, disableOnInteraction: false }} // Slower delay
               >
                 {images_small2.map((img, i) => (
-                  <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
+                  <SwiperSlide key={i}><img src={img.src} alt={img.alt} loading="lazy" /></SwiperSlide>
                 ))}
               </Swiper>
             </div>
           </div>
 
           {/* Bottom-right medium carousel */}
-          <div className="gallery-item medium-item">
-            <Swiper
-              {...commonSwiperProps}
-              autoplay={{ delay: 9000, disableOnInteraction: false }} // Slower delay
-            >
-              {images_medium.map((img, i) => (
-                <SwiperSlide key={i}><img src={img.src} alt={img.alt} /></SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+                      <div className="gallery-item medium-item">
+                      <Swiper
+                        {...commonSwiperProps}
+                        autoplay={{ delay: 9000, disableOnInteraction: false }} // Slower delay
+                      >
+                        {images_medium.map((img, i) => (
+                          <SwiperSlide key={i}><img src={img.src} alt={img.alt} loading="lazy" /></SwiperSlide>
+                        ))}
+                      </Swiper>
+                    </div>        </div>
       </div>
     </section>
   );

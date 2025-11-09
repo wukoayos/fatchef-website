@@ -28,31 +28,31 @@ const signature: Section = {
       name: "SOUVLAKI PLATTER",
       desc:
         "Lamb, chicken souvlaki, chorizo, calamari. Served with pita bread, chips, green salad, tzatziki and tartare.\n" +
-        "For 2: 79 • For 4–5: 149 • For 8–9: 279",
+        "For 2: 79\nFor 4–5: 149\nFor 8–9: 279",
     },
     {
       name: "PARMALAKI PLATTER",
       desc:
         "Lamb, chicken souvlaki, calamari, and chicken parma (no ham). Served with pita bread, chips, green salad, tzatziki, and tartare.\n" +
-        "For 2: 99 (500g parma) • For 4–5: 179 (1kg parma) • For 8–9: 299 (2kg parma)",
+        "For 2: 99 (500g parma)\nFor 4–5: 179 (1kg parma)\nFor 8–9: 299 (2kg parma)",
     },
     {
       name: "RIB MASTER PLATTER",
       desc:
         "Slow cooked marinated PORK ribs, fried chicken wings, chorizo. Served with coleslaw, chips, and onion rings.\n" +
-        "For 2: 85 • For 4–5: 155 • For 8–9: 279",
+        "For 2: 85\nFor 4–5: 155\nFor 8–9: 279",
     },
     {
       name: "BEEF LOVERS PLATTER",
       desc:
-        "Slow cooked BBQ BEEF ribs, beef steak, grilled prawn skewers, grilled corn cobs. Served with chips and onion rings.\n" +
-        "For 2: 99 • For 4–5: 179 • For 8–9: 299",
+        "Slow cooked BBQ BEEF ribs, beef steak, grilled prawn skewers, grilled corn cobs, fried onion rings. Served with chips and onion rings.\n" +
+        "For 2: 99\nFor 4–5: 179\nFor 8–9: 299",
     },
     {
       name: "MIXED GRILL PLATTER",
       desc:
         "Grilled chicken skewers, lamb skewers, prawn skewers, slice beef brisket, corn cobs. Served with chips and onion rings.\n" +
-        "For 3–4: 185 • For 7–8: 329",
+        "For 3–4: 185\nFor 7–8: 329",
     },
     {
       name: "SEAFOOD PLATTER",

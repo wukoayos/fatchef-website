@@ -133,11 +133,12 @@
   color:#b7b7b7; letter-spacing:2px; white-space:nowrap;
   overflow:hidden; pointer-events:none;
 }
-.item__row--dots .item__name > *{ position:relative; background:transparent; z-index:1; }
+.item__row--dots .item__name > *{ position:relative; background: var(--paper-1); z-index:1; padding-right: 0.2em; }
+.panel--inverse .item__row--dots .item__name > * { background: var(--inv-bg); }
 .item__row--dots .item__price{ margin-left:auto; }
 
 .item__desc{
-  margin:6px 0 0; color:var(--text2); line-height:1.58; font-size:.96rem;
+  margin:6px 0 0; color:var(--text2); line-height:1.58; font-size:.96rem; white-space: pre-line;
 }
 
 /* Print */

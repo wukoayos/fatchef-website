@@ -97,7 +97,7 @@
 .menu-root .item__name{ font-weight: 600; letter-spacing:.02em; }
 .menu-root .item__flags{ color:#6b7280; font-weight:500; }
 .menu-root .item__price{ font-weight: 700; font-variant-numeric: tabular-nums; white-space:nowrap; }
-.menu-root .item__desc{ margin:.35rem 0 0; color:var(--text-2); line-height:1.6; font-size:.96rem; }
+.menu-root .item__desc{ margin:.35rem 0 0; color:var(--text-2); line-height:1.6; font-size:.96rem; white-space: pre-line; }
 
 /* ADD ON */
 .menu-root .add-on{ margin-top:1rem; }

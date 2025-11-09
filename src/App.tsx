@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
 import logo from './assets/logo.png';
 import HeroSection from './components/HeroSection';
 import BookATable from './components/BookATable';
 // import MenuSection from './components/MenuSection';
-import PhotoGallery from './components/PhotoGallery';
-import Locations from './components/Locations';
 import Footer from './components/Footer';
 import KeilorEastMenu from './components/KeilorEastMenu'; // Import the new component
 import BallaratMenu from './components/BallaratMenu'; // Import the new component
@@ -15,6 +13,9 @@ import useDocumentTitle from './hooks/useDocumentTitle';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import routing components
 import { HashLink } from 'react-router-hash-link'; // Import HashLink
 
+const PhotoGallery = React.lazy(() => import('./components/PhotoGallery'));
+const Locations = React.lazy(() => import('./components/Locations'));
+
 const HomePage = () => {
   useDocumentTitle("FAT CHEF - Never Trust A Skinny Chef");
   return (
@@ -22,9 +23,13 @@ const HomePage = () => {
       <HeroSection />
       <BookATable />
       <main>
-        <PhotoGallery />
+        <Suspense fallback={<div>Loading Photo Gallery...</div>}>
+          <PhotoGallery />
+        </Suspense>
         {/* <MenuSection /> */}
-        <Locations />
+        <Suspense fallback={<div>Loading Locations...</div>}>
+          <Locations />
+        </Suspense>
       </main>
     </>
   );
@@ -36,7 +41,7 @@ function App() {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
           <div className="container">
-            <Link className="navbar-brand" to="/"> {/* Use Link for home */}
+            <Link className="navbar-brand" to="/" onClick={() => window.scrollTo(0, 0)}> {/* Use Link for home */}
               <img src={logo} alt="FAT CHEF Restaurant Logo" style={{ height: '120px' }} />
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
