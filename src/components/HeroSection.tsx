@@ -41,6 +41,9 @@ function HeroSection() {
                 <a href="https://www.quandoo.com.au/checkout-widget/widget?aid=2&merchantId=105879" target="_blank" rel="noopener noreferrer" className="dropdown-item">
                   FAT CHEF Ballarat
                 </a>
+                <a href="https://inline.app/booking/-N4yy_yLsYeh5u1PXOnt:inline-live-2" target="_blank" rel="noopener noreferrer" className="dropdown-item">
+                  FAT CHEF Carrum Downs
+                </a>
               </div>
             )}
           </div>

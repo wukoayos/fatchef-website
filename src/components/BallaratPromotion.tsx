@@ -1,7 +1,7 @@
 import React from "react";
 import "./BallaratPromotion.css";
 import useDocumentTitle from "../hooks/useDocumentTitle";
-import ballaratPromotion from "../assets/promotion ballarat.jpg";
+import ballaratPromotion from "../assets/promotion ballarat.png";
 
 export default function BallaratPromotion() {
   useDocumentTitle("Ballarat Promotions - FAT CHEF");

@@ -1,7 +1,7 @@
 import React from "react";
 import "./KeilorEastPromotion.css";
 import useDocumentTitle from "../hooks/useDocumentTitle";
-import keilorEastPromotion from "../assets/promotion keilor east.jpg";
+import keilorEastPromotion from "../assets/promotion keilor east.png";
 
 export default function KeilorEastPromotion() {
   useDocumentTitle("Keilor East Promotions - FAT CHEF");

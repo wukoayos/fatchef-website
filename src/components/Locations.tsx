@@ -84,7 +84,28 @@ function Locations() {
         tiktok: "https://www.tiktok.com/@fatchefballarat?_r=1&_t=ZS-9170o89M1At"
       }
     },
+    {
+      name: "FAT CHEF Carrum Downs",
+      address: "1095 Frankston - Dandenong Rd, Carrum Downs VIC 3201",
+      phone: "(03) 9782 0618",
+      tradingHours: "Monday - Sunday: 7:00 AM - 8:30 PM",
+      googleMapsLink: "https://www.google.com/maps/place/FAT+CHEF+Carrum+Downs/@-38.088782,145.182943,1395m/data=!3m1!1e3!4m6!3m5!1s0x6ad60daa14c9e05b:0x848e50aa6e1a2a2e!8m2!3d-38.0887818!4d145.1829433!16s%2Fg%2F11fxwth9tf?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+      socialLinks: {
+        facebook: "https://m.facebook.com/events/d41d8cd9/coffee-and-cards-at-the-fat-chef-in-carrum-downs/711836057252889/",
+        instagram: "https://www.instagram.com/fatchefcarrumdowns/?hl=en",
+        tiktok: ""
+      }
+    },
   ];
+
+  const getLocationId = (index: number) => {
+    switch(index) {
+      case 0: return "keilor-east-location";
+      case 1: return "ballarat-location";
+      case 2: return "carrum-downs-location";
+      default: return `location-${index}`;
+    }
+  };
 
   return (
     <section id="locations" className="pb-5" style={{ backgroundColor: '#faf7f2' }}>
@@ -92,7 +113,7 @@ function Locations() {
           <LocationBlock 
             key={loc.name} 
             {...loc} 
-            id={index === 0 ? "keilor-east-location" : "ballarat-location"}
+            id={getLocationId(index)}
           />
         ))}
     </section>
