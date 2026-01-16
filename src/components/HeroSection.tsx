@@ -38,7 +38,7 @@ function HeroSection() {
                 <a href="https://inline.app/booking/-Mpd7JG15ak_5in4-yoo:inline-live-2/-Mpd7JtCkSmw4lWeTeOD?language=en" target="_blank" rel="noopener noreferrer" className="dropdown-item">
                   FAT CHEF Keilor East
                 </a>
-                <a href="https://www.quandoo.com.au/checkout-widget/widget?aid=2&merchantId=105879" target="_blank" rel="noopener noreferrer" className="dropdown-item">
+                <a href="https://inline.app/booking/-MpdA6HeGgYZSaki4kNN:inline-live-2/-MpdA6vJ4vHs8l_eY5ZE" target="_blank" rel="noopener noreferrer" className="dropdown-item">
                   FAT CHEF Ballarat
                 </a>
                 <a href="https://inline.app/booking/-N4yy_yLsYeh5u1PXOnt:inline-live-2" target="_blank" rel="noopener noreferrer" className="dropdown-item">
