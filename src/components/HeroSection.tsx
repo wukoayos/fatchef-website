@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './HeroSection.css';
 import './BookATable.css'; // Import styles for the button
 import heroVideo from '../assets/hero.mp4';
+import { logEvent } from '../analytics';
 
 import heroPoster from '../assets/hero-poster.jpg';
 
@@ -35,13 +36,31 @@ function HeroSection() {
             <button className="book-a-table-button">Book a Table</button>
             {isDropdownOpen && (
               <div className="book-a-table-dropdown">
-                <a href="https://inline.app/booking/-Mpd7JG15ak_5in4-yoo:inline-live-2/-Mpd7JtCkSmw4lWeTeOD?language=en" target="_blank" rel="noopener noreferrer" className="dropdown-item">
+                <a 
+                  href="https://inline.app/booking/-Mpd7JG15ak_5in4-yoo:inline-live-2/-Mpd7JtCkSmw4lWeTeOD?language=en" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="dropdown-item"
+                  onClick={() => logEvent('Booking', 'Click', 'Keilor East')}
+                >
                   FAT CHEF Keilor East
                 </a>
-                <a href="https://inline.app/booking/-MpdA6HeGgYZSaki4kNN:inline-live-2/-MpdA6vJ4vHs8l_eY5ZE" target="_blank" rel="noopener noreferrer" className="dropdown-item">
+                <a 
+                  href="https://inline.app/booking/-MpdA6HeGgYZSaki4kNN:inline-live-2/-MpdA6vJ4vHs8l_eY5ZE" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="dropdown-item"
+                  onClick={() => logEvent('Booking', 'Click', 'Ballarat')}
+                >
                   FAT CHEF Ballarat
                 </a>
-                <a href="https://inline.app/booking/-N4yy_yLsYeh5u1PXOnt:inline-live-2" target="_blank" rel="noopener noreferrer" className="dropdown-item">
+                <a 
+                  href="https://inline.app/booking/-N4yy_yLsYeh5u1PXOnt:inline-live-2" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="dropdown-item"
+                  onClick={() => logEvent('Booking', 'Click', 'Carrum Downs')}
+                >
                   FAT CHEF Carrum Downs
                 </a>
               </div>

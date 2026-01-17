@@ -12,6 +12,7 @@ import BallaratPromotion from './components/BallaratPromotion'; // Import the ne
 import CarrumDownsMenu from './components/CarrumDownsMenu'; // Import the new component
 import CarrumDownsPromotion from './components/CarrumDownsPromotion'; // Import the new component
 import useDocumentTitle from './hooks/useDocumentTitle';
+import AnalyticsTracker from './components/AnalyticsTracker';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import routing components
 import { HashLink } from 'react-router-hash-link'; // Import HashLink
 
@@ -40,6 +41,7 @@ const HomePage = () => {
 function App() {
   return (
     <Router> {/* Wrap the entire application with Router */}
+      <AnalyticsTracker />
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
           <div className="container">

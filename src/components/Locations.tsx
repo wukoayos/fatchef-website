@@ -2,6 +2,7 @@ import React from 'react';
 import './Locations.css';
 import { FiPhone } from 'react-icons/fi';
 import SocialLinks from './SocialLinks';
+import { logEvent } from '../analytics';
 
 // Define a type for the props for better type-checking and readability
 interface LocationBlockProps {
@@ -44,13 +45,22 @@ const LocationBlock = ({ name, address, phone, tradingHours, googleMapsLink, id,
         <p className="trading-hours-text">{tradingHours}</p>
       </div>
       <p className="location-address">{address}</p>
-      <p className="location-phone">{(FiPhone as any)()} {phone}</p>
+      <p className="location-phone">
+        <a 
+          href={`tel:${phone}`} 
+          onClick={() => logEvent('Contact', 'Call', name)} 
+          style={{ color: 'inherit', textDecoration: 'none' }}
+        >
+          {(FiPhone as any)()} {phone}
+        </a>
+      </p>
 
       <a 
         href={googleMapsLink} 
         className="btn btn-dark get-directions-btn" 
         target="_blank" 
         rel="noopener noreferrer"
+        onClick={() => logEvent('Navigation', 'Get Directions', name)}
       >
         Get Directions
       </a>
