@@ -37,7 +37,7 @@ const LocationBlock = ({ name, slug, address, phone, tradingHours, googleMapsLin
         loading="lazy"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
-        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDR_upH7w71m8hyUhi5xAsZ39YLqyAHl7g&q=${encodeURIComponent(name)}`}
+        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(name)}`}
       ></iframe>
     </div>
 
