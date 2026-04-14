@@ -65,6 +65,18 @@
   box-shadow: 0 6px 20px rgba(231, 201, 127, 0.45);
 }
 
+/* Invisible hover bridge between button and dropdown so the mouse
+   doesn't leave the wrapper while crossing the visual gap. */
+.book-cta-button-wrap::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 14px;
+  pointer-events: auto;
+}
+
 .book-cta-dropdown {
   position: absolute;
   top: calc(100% + 10px);
