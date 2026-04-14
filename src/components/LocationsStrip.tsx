@@ -20,7 +20,7 @@ const LOCATIONS: StripLocation[] = [
     name: 'FAT CHEF Keilor East',
     shortName: 'Keilor East',
     suburb: 'Unit 16/235 Milleara Rd',
-    hours: 'Mon–Sat 8AM–9PM',
+    hours: 'Mon–Sat 8AM–9PM · Sun 8:30AM–9PM',
     hashId: 'keilor-east-location',
     rotate: -3,
     swatch: 'linear-gradient(135deg, #f4d790 0%, #e7c97f 100%)',
