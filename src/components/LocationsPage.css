@@ -1,0 +1,35 @@
+.locations-page {
+  padding: 3rem 1rem 2rem;
+  background-color: #faf7f2;
+}
+
+.locations-page-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1rem;
+}
+
+.locations-page-header h1 {
+  font-family: 'Lora', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #3B2E2A;
+  margin-bottom: 0.8rem;
+}
+
+.locations-page-header p {
+  font-size: 1.1rem;
+  color: #6b5a55;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .locations-page-header h1 {
+    font-size: 2rem;
+  }
+  .locations-page-header p {
+    font-size: 1rem;
+  }
+}

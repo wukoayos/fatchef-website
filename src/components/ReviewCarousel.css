@@ -1,0 +1,198 @@
+/*
+  Plan 3: Review "banner" that visually continues the Location card above it.
+  A thick left accent bar (same brand brown #8B7355) signals the attachment.
+  Slight negative margin-top eats the location card's margin-bottom so the two
+  pieces feel like a single group.
+*/
+
+.rc-banner {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  max-width: calc(100% - 2rem);
+  margin: -1.5rem auto 2rem;
+  padding: 1rem 1.5rem 1rem 1.2rem;
+  background-color: #f5efe7;
+  border-left: 4px solid #8B7355;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.rc-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.rc-quote-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.rc-stars {
+  display: inline-flex;
+  gap: 2px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  padding-top: 3px;
+}
+
+.rc-star-filled {
+  color: #FBBC04;
+  display: inline-flex;
+}
+
+.rc-star-empty {
+  color: #d9cec5;
+  display: inline-flex;
+}
+
+.rc-quote {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #3B2E2A;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.rc-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 1.7rem; /* align with quote text */
+  font-size: 0.82rem;
+  color: #8b7a72;
+  flex-wrap: wrap;
+}
+
+.rc-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.rc-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rc-author {
+  font-weight: 600;
+  color: #6b5a55;
+}
+
+.rc-sep {
+  color: #c4b5ab;
+  padding: 0 0.1rem;
+}
+
+.rc-store {
+  color: #8b7a72;
+}
+
+.rc-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #8B7355;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.rc-see-all:hover {
+  color: #3B2E2A;
+  text-decoration: underline;
+}
+
+.rc-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(139, 115, 85, 0.2);
+  padding-left: 1rem;
+  min-width: 48px;
+}
+
+.rc-nav-btn {
+  background: transparent;
+  border: none;
+  color: #8B7355;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 0.75rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.rc-nav-btn:hover {
+  background-color: #8B7355;
+  color: white;
+}
+
+.rc-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.rc-dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #d9cec5;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.rc-dot-active {
+  background-color: #8B7355;
+}
+
+.rc-dot:hover {
+  background-color: #8B7355;
+}
+
+/* Tablet / mobile: collapse nav below the quote */
+@media (max-width: 760px) {
+  .rc-banner {
+    margin: -1rem 1rem 2rem;
+    max-width: calc(100% - 2rem);
+    flex-direction: column;
+    padding: 1rem 1.2rem;
+  }
+  .rc-nav {
+    flex-direction: row;
+    border-left: none;
+    padding-left: 0;
+    justify-content: center;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(139, 115, 85, 0.2);
+  }
+  .rc-meta-row {
+    padding-left: 0;
+  }
+  .rc-quote {
+    font-size: 0.95rem;
+  }
+}

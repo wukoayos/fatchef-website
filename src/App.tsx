@@ -1,8 +1,11 @@
 import React, { Suspense } from 'react';
 import './App.css';
-import logo from './assets/logo.png';
 import HeroSection from './components/HeroSection';
 import BookATable from './components/BookATable';
+import BrandStory from './components/BrandStory';
+import PromotionsTeaser from './components/PromotionsTeaser';
+import BookCTABanner from './components/BookCTABanner';
+import StickyMobileBar from './components/StickyMobileBar';
 // import MenuSection from './components/MenuSection';
 import Footer from './components/Footer';
 import KeilorEastMenu from './components/KeilorEastMenu'; // Import the new component
@@ -17,7 +20,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'; // Import HashLink
 
 const PhotoGallery = React.lazy(() => import('./components/PhotoGallery'));
-const Locations = React.lazy(() => import('./components/Locations'));
+const LocationsStrip = React.lazy(() => import('./components/LocationsStrip'));
+const LocationsPage = React.lazy(() => import('./components/LocationsPage'));
 
 const HomePage = () => {
   useDocumentTitle("FAT CHEF - Never Trust A Skinny Chef");
@@ -25,15 +29,17 @@ const HomePage = () => {
     <>
       <HeroSection />
       <BookATable />
+      <BrandStory />
       <main>
         <Suspense fallback={<div>Loading Photo Gallery...</div>}>
           <PhotoGallery />
         </Suspense>
-        {/* <MenuSection /> */}
+        <PromotionsTeaser />
         <Suspense fallback={<div>Loading Locations...</div>}>
-          <Locations />
+          <LocationsStrip />
         </Suspense>
       </main>
+      <BookCTABanner />
     </>
   );
 };
@@ -45,8 +51,8 @@ function App() {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
           <div className="container">
-            <Link className="navbar-brand" to="/" onClick={() => window.scrollTo(0, 0)}> {/* Use Link for home */}
-              <img src={logo} alt="FAT CHEF Restaurant Logo" style={{ height: '120px' }} />
+            <Link className="navbar-brand" to="/" onClick={() => window.scrollTo(0, 0)}>
+              <span className="nav-wordmark">FAT CHEF</span>
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -54,23 +60,13 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Book Now
-                  </a>
-                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a className="dropdown-item" href="https://inline.app/booking/-Mpd7JG15ak_5in4-yoo:inline-live-2/-Mpd7JtCkSmw4lWeTeOD?language=en" target="_blank" rel="noopener noreferrer">FAT CHEF Keilor East</a></li>
-                    <li><a className="dropdown-item" href="https://inline.app/booking/-MpdA6HeGgYZSaki4kNN:inline-live-2/-MpdA6vJ4vHs8l_eY5ZE" target="_blank" rel="noopener noreferrer">FAT CHEF Ballarat</a></li>
-                    <li><a className="dropdown-item" href="https://inline.app/booking/-N4yy_yLsYeh5u1PXOnt:inline-live-2" target="_blank" rel="noopener noreferrer">FAT CHEF Carrum Downs</a></li>
-                  </ul>
-                </li>
-                <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="#!" id="navbarLocationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Location
+                    Locations
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarLocationDropdown">
-                    <li><HashLink className="dropdown-item" to="/#keilor-east-location">FAT CHEF Keilor East</HashLink></li>
-                    <li><HashLink className="dropdown-item" to="/#ballarat-location">FAT CHEF Ballarat</HashLink></li>
-                    <li><HashLink className="dropdown-item" to="/#carrum-downs-location">FAT CHEF Carrum Downs</HashLink></li>
+                    <li><HashLink className="dropdown-item" to="/locations#keilor-east-location">FAT CHEF Keilor East</HashLink></li>
+                    <li><HashLink className="dropdown-item" to="/locations#ballarat-location">FAT CHEF Ballarat</HashLink></li>
+                    <li><HashLink className="dropdown-item" to="/locations#carrum-downs-location">FAT CHEF Carrum Downs</HashLink></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
@@ -104,12 +100,29 @@ function App() {
                   </ul>
                 </li>
               </ul>
+              <ul className="navbar-nav nav-cta-wrapper">
+                <li className="nav-item dropdown">
+                  <a className="nav-link nav-cta dropdown-toggle" href="#!" id="navbarBookDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Book a Table
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarBookDropdown">
+                    <li><a className="dropdown-item" href="https://inline.app/booking/-Mpd7JG15ak_5in4-yoo:inline-live-2/-Mpd7JtCkSmw4lWeTeOD?language=en" target="_blank" rel="noopener noreferrer">FAT CHEF Keilor East</a></li>
+                    <li><a className="dropdown-item" href="https://inline.app/booking/-MpdA6HeGgYZSaki4kNN:inline-live-2/-MpdA6vJ4vHs8l_eY5ZE" target="_blank" rel="noopener noreferrer">FAT CHEF Ballarat</a></li>
+                    <li><a className="dropdown-item" href="https://inline.app/booking/-N4yy_yLsYeh5u1PXOnt:inline-live-2" target="_blank" rel="noopener noreferrer">FAT CHEF Carrum Downs</a></li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
         </nav>
 
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/locations" element={
+            <Suspense fallback={<div>Loading Locations...</div>}>
+              <LocationsPage />
+            </Suspense>
+          } />
           <Route path="/menu/keilor-east" element={<KeilorEastMenu />} />
           <Route path="/menu/ballarat" element={<BallaratMenu />} />
           <Route path="/menu/carrum-downs" element={<CarrumDownsMenu />} />
@@ -118,6 +131,7 @@ function App() {
           <Route path="/promotion/carrum-downs" element={<CarrumDownsPromotion />} />
         </Routes>
         <Footer />
+        <StickyMobileBar />
       </div>
     </Router>
   );

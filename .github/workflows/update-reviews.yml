@@ -1,0 +1,39 @@
+name: Update Google Reviews
+
+on:
+  schedule:
+    # 1st of every month at 18:00 UTC (04:00 Melbourne AEST)
+    - cron: '0 18 1 * *'
+  workflow_dispatch: {} # allow manual run
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch latest reviews
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: node scripts/fetch-reviews.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet src/data/reviews.json; then
+            echo "No review changes."
+            exit 0
+          fi
+          git add src/data/reviews.json
+          git commit -m "chore: refresh Google reviews [skip ci]"
+          git push

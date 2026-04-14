@@ -25,11 +25,12 @@ function HeroSection() {
       <div className="hero-overlay">
         <div className="hero-content text-center">
           <h1 className="hero-title">FAT CHEF</h1>
-          
+          <p className="hero-tagline">Never Trust A Skinny Chef</p>
+
+          <div className="hero-ctas">
           {/* Book a Table button moved here */}
-          <div 
+          <div
             className="book-a-table-wrapper"
-            style={{ marginTop: '1rem' }}
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
@@ -65,6 +66,15 @@ function HeroSection() {
                 </a>
               </div>
             )}
+          </div>
+
+          <a
+            href="/menu/keilor-east"
+            className="hero-view-menu-button"
+            onClick={() => logEvent('Navigation', 'Hero View Menu', 'Keilor East')}
+          >
+            View Menu
+          </a>
           </div>
 
         </div>

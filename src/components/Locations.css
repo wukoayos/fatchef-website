@@ -90,18 +90,72 @@
   white-space: pre-line;
 }
 
-.get-directions-btn {
+.location-actions {
   margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  border-radius: 8px;
-  background-color: var(--dark-gray);
-  border-color: var(--dark-gray);
-  width: 100%;
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
 }
 
-.get-directions-btn:hover {
-  background-color: var(--roast-brown);
-  border-color: var(--roast-brown);
+.location-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.location-action-btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.location-action-primary {
+  grid-column: 1 / -1; /* Full width — the headline CTA */
+  background-color: #8B7355; /* Coffee gray — matches location-name-bar */
+  color: white;
+}
+
+.location-action-primary:hover {
+  background-color: #3B2E2A; /* Roast brown */
+  color: white;
+}
+
+.location-action-secondary {
+  background-color: #3B2E2A;
+  color: white;
+}
+
+.location-action-secondary:hover {
+  background-color: #5a453f;
+  color: white;
+}
+
+.location-action-outline {
+  grid-column: 1 / -1; /* Full width below */
+  background-color: transparent;
+  color: #3B2E2A;
+  border: 2px solid #3B2E2A;
+}
+
+.location-action-outline:hover {
+  background-color: #3B2E2A;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .location-actions {
+    grid-template-columns: 1fr;
+  }
+  .location-action-secondary {
+    grid-column: 1 / -1;
+  }
 }

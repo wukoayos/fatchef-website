@@ -1,0 +1,127 @@
+.brand-story {
+  background-color: #faf7f2;
+  padding: 4rem 1rem;
+}
+
+.brand-story-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.brand-story-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.brand-story-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 4 / 3;
+}
+
+.brand-story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-story-text {
+  padding: 0 1rem;
+}
+
+.brand-story-eyebrow {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #8B7355;
+  letter-spacing: 4px;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+}
+
+.brand-story-headline {
+  font-family: 'Lora', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #3B2E2A;
+  line-height: 1.2;
+  margin: 0 0 1.2rem;
+}
+
+.brand-story-body {
+  font-family: 'Georgia', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #5c4c47;
+  margin: 0 0 1.8rem;
+}
+
+.brand-story-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand-story-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  font-size: 0.98rem;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  border: 2px solid transparent;
+}
+
+.brand-story-btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.brand-story-btn-primary {
+  background-color: #3B2E2A;
+  color: white;
+}
+
+.brand-story-btn-primary:hover {
+  background-color: #5a453f;
+  color: white;
+}
+
+.brand-story-btn-outline {
+  background-color: transparent;
+  color: #3B2E2A;
+  border-color: #3B2E2A;
+}
+
+.brand-story-btn-outline:hover {
+  background-color: #3B2E2A;
+  color: white;
+}
+
+@media (max-width: 860px) {
+  .brand-story {
+    padding: 3rem 1rem;
+  }
+  .brand-story-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .brand-story-text {
+    padding: 0;
+    text-align: center;
+  }
+  .brand-story-headline {
+    font-size: 1.9rem;
+  }
+  .brand-story-ctas {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,163 @@
+.locations-strip {
+  padding: 4rem 1rem 5rem;
+  background-color: #faf7f2;
+  /* faint corkboard texture for the polaroid stage */
+  background-image: url('https://www.transparenttextures.com/patterns/cork-wallet.png');
+  background-blend-mode: multiply;
+}
+
+.locations-strip-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+}
+
+.locations-strip-header h2 {
+  font-family: 'Lora', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #3B2E2A;
+  margin-bottom: 0.5rem;
+}
+
+.locations-strip-header p {
+  font-size: 1.05rem;
+  color: #6b5a55;
+  margin: 0;
+}
+
+.locations-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+  justify-items: center;
+  padding: 1rem 0;
+}
+
+@media (max-width: 860px) {
+  .locations-strip-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    gap: 3rem;
+  }
+}
+
+/* ─── Polaroid card ─────────────────────────────────────────────── */
+
+.polaroid-card {
+  --tilt: 0deg;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 280px;
+  background-color: #fdfaf3;
+  padding: 14px 14px 18px;          /* photo + caption stack naturally */
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.05),
+    0 6px 18px rgba(0, 0, 0, 0.18);
+  transform: rotate(var(--tilt));
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1.05),
+              box-shadow 0.35s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.polaroid-card:hover,
+.polaroid-card:focus-visible {
+  text-decoration: none;
+  color: inherit;
+  transform: rotate(0deg) translateY(-8px) scale(1.03);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.05),
+    0 18px 36px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* Pushpin at the top of each polaroid */
+.polaroid-pin {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow:
+    inset -2px -2px 3px rgba(0, 0, 0, 0.35),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+/* "Photo" area — colored swatch + map pin icon + suburb label */
+.polaroid-photo {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.polaroid-photo::after {
+  /* subtle vignette to give the colored block depth */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 50%, rgba(0, 0, 0, 0.22) 100%);
+  pointer-events: none;
+}
+
+.polaroid-photo-icon {
+  font-size: 2.6rem;
+  opacity: 0.92;
+  position: relative;
+  z-index: 1;
+}
+
+.polaroid-photo-label {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* Caption — handwritten-friendly serif on the polaroid label */
+.polaroid-caption {
+  text-align: center;
+  padding: 14px 4px 4px;
+}
+
+.polaroid-name {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #3B2E2A;
+  letter-spacing: 0.5px;
+  margin: 0 0 0.4rem;
+}
+
+.polaroid-meta {
+  font-family: 'Georgia', serif;
+  font-size: 0.8rem;
+  color: #6b5a55;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.polaroid-hours {
+  color: #8b7a72;
+  font-style: italic;
+}

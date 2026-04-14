@@ -1,0 +1,110 @@
+.book-cta-banner {
+  background: linear-gradient(135deg, #3B2E2A 0%, #2A2A2A 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.book-cta-banner::before {
+  /* subtle texture overlay */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.book-cta-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.book-cta-headline {
+  font-family: 'Lora', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  margin: 0 0 0.6rem;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.book-cta-sub {
+  font-family: 'Georgia', serif;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.book-cta-button-wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.book-cta-button {
+  background-color: #E7C97F;
+  color: #2A2A2A;
+  border: none;
+  padding: 0.95rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(231, 201, 127, 0.35);
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.book-cta-button:hover {
+  background-color: #d4b56a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 201, 127, 0.45);
+}
+
+.book-cta-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  min-width: 240px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.book-cta-dropdown-item {
+  display: block;
+  padding: 0.85rem 1.4rem;
+  color: #3B2E2A;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-align: left;
+  transition: background-color 0.15s, color 0.15s;
+  border-bottom: 1px solid #f0ebe4;
+}
+
+.book-cta-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.book-cta-dropdown-item:hover {
+  background-color: #faf7f2;
+  color: #8B7355;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .book-cta-banner {
+    padding: 3rem 1rem;
+  }
+  .book-cta-headline {
+    font-size: 2rem;
+  }
+}

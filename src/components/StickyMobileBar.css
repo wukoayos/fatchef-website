@@ -1,0 +1,68 @@
+.sticky-mobile-bar {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 760px) {
+  .sticky-mobile-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2A2A2A;
+    border-top: 1px solid rgba(231, 201, 127, 0.25);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25);
+    z-index: 1050;
+    padding: 0.5rem 0 max(0.5rem, env(safe-area-inset-bottom));
+  }
+
+  body {
+    /* prevent the bar from covering footer content */
+    padding-bottom: 64px;
+  }
+}
+
+.smb-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 0.2rem;
+  letter-spacing: 0.3px;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.smb-action:hover,
+.smb-action:active {
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.smb-icon {
+  font-size: 1.3rem;
+  color: #E7C97F;
+}
+
+.smb-action-primary .smb-icon {
+  color: #2A2A2A;
+}
+
+.smb-action-primary {
+  background-color: #E7C97F;
+  color: #2A2A2A;
+  border-radius: 8px;
+  margin: 0 4px;
+}
+
+.smb-action-primary:hover,
+.smb-action-primary:active {
+  background-color: #d4b56a;
+  color: #2A2A2A;
+}
